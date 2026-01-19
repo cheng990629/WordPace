@@ -20,10 +20,21 @@ pnpm install
 
 ### **3️⃣ 配置环境变量**
 
-在项目根目录创建 `.env.local`，添加以下内容：
+复制 `.env.example` 文件为 `.env.local`，并根据实际情况修改配置：
+
+```bash
+cp .env.example .env.local
+```
+
+然后编辑 `.env.local` 文件，填入真实的配置信息：
 
 ```env
-DATABASE_URL="postgresql://username:password@localhost:5432/listenly"
+DATABASE_URL="postgresql://your_username:your_password@your_host:5432/your_database"
+OSS_REGION="oss-cn-beijing"
+OSS_ACCESS_KEY_ID="your_oss_access_key_id"
+OSS_ACCESS_KEY_SECRET="your_oss_access_key_secret"
+OSS_BUCKET_NAME="your_bucket_name"
+ADMIN_SECRET_KEY="your_secure_admin_secret_key"
 ```
 
 ### **4️⃣ 运行数据库迁移**
