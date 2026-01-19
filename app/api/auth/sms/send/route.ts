@@ -1,24 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from '@/lib/prisma'
-import Dysmsapi20170525, * as $Dysmsapi20170525 from "@alicloud/dysmsapi20170525";
-import * as $OpenApi from "@alicloud/openapi-client";
 import { randomInt } from "crypto";
-
-const ACCESS_KEY_ID = process.env.ALIYUN_ACCESS_KEY_ID!;
-const ACCESS_KEY_SECRET = process.env.ALIYUN_ACCESS_KEY_SECRET!;
-const SIGN_NAME = process.env.ALIYUN_SMS_SIGN_NAME!;
-const TEMPLATE_CODE = process.env.ALIYUN_SMS_TEMPLATE_CODE!;
-
-const client = createClient();
-
-function createClient(): Dysmsapi20170525 {
-  const config = new $OpenApi.Config({
-    accessKeyId: ACCESS_KEY_ID,
-    accessKeySecret: ACCESS_KEY_SECRET,
-  });
-  config.endpoint = "dysmsapi.aliyuncs.com";
-  return new Dysmsapi20170525(config);
-}
 
 export async function POST(req: Request) {
   try {

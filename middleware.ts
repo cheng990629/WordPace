@@ -88,10 +88,24 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // API路由添加通配符
-    ...authRoutes.map((path) => `${path}/:path*`),
+    '/api/feedback/:path*',
+    '/api/word/:path*',
+    '/api/sentence/:path*',
+    '/api/shadowing/:path*',
+    '/api/user/:path*',
+    '/api/admin/:path*',
     // 页面路由保持原样
-    ...protectedPagePaths,
+    '/my',
+    '/word',
+    '/sentence',
+    '/shadowing',
+    '/sync',
+    '/admin',
     // 添加公开路由
-    ...publicApiRoutes,
+    '/api/user/set-admin',
+    '/api/catalog',
+    '/api/word/word-set',
+    '/api/sentence/sentence-set',
+    '/api/shadowing/shadowing-set',
   ],
 };
