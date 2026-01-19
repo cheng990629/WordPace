@@ -138,7 +138,7 @@ export async function POST(req: Request) {
     const cookieStore = await cookies()
     cookieStore.set('userId', user.id, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: false, // 暂时关闭secure，允许HTTP环境使用
       sameSite: 'lax',
       maxAge: 30 * 24 * 60 * 60 // 30 days
     })
