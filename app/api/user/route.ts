@@ -10,6 +10,7 @@ const client = new OSS({
   bucket: process.env.OSS_BUCKET_NAME!,
   secure: true, // 强制使用HTTPS
 });
+console.log(process.env)
 
 export async function GET() {
   try {

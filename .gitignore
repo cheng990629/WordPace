@@ -46,3 +46,10 @@ next-env.d.ts
 /logs
 /logs/*
 *.log
+
+# sensitive files
+aaa
+secrets
+keys
+*.key
+*.pem

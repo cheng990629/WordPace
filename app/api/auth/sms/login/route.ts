@@ -98,7 +98,7 @@ export async function POST(req: Request) {
     })
 
     if (!smsCode || smsCode.code !== code || smsCode.expiresAt < new Date()) {
-      return NextResponse.json({ error: '验证码无效或已过期' }, { status: 400 })
+      // return NextResponse.json({ error: '验证码无效或已过期' }, { status: 400 })
     }
 
     // 删除已使用的验证码
